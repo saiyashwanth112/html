@@ -1,0 +1,42 @@
+<html>
+<head>
+<script>
+function validate()
+{
+var username=document.f1.n1.value;
+var password=document.f1.n2.value;
+if(username=="")
+{
+window.alert("please enter your username");
+return false;
+}
+if(password=="")
+{
+window.alert("please enter your password");
+return false;
+}
+else if(password.length<8)
+{
+window.alert("enter atleast eight characters");
+return false;
+}
+window.alert("congratulations");
+}
+function display(c)
+{
+var a=document.f1.n1.value;
+if(a=="")
+{
+document.getElementById("s").innerHTML = "please enter username";
+}
+}
+</script>
+</head>
+
+<body>
+<form name="f1">
+USERNAME:     	&nbsp	 <input type="text" name="n1" id="s" onblur="display(this);"></br></br>
+PASSWORD:  	&nbsp        <input type="password" name="n2"></br></br>
+<input type="button" value="ok" onclick="validate();">
+</body>
+</html>

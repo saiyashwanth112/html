@@ -1,0 +1,86 @@
+<html>
+<head>
+<script>
+function validate()
+{
+var name=document.f1.n1.value;
+var email=document.f1.n2.value;
+var phone=document.f1.n3.value;
+var address=document.f1.n4.value;
+var dob=document.f1.n5.value;
+var a=email.indexOf('@');
+var b=email.indexOf('.');
+if(name=="")
+{
+window.alert("please enter your name");
+return false;
+}
+if((a==-1)&&(b==-1))
+{
+window.alert("please enter valid email id");
+return false;
+}
+if(phone=="")
+{
+window.alert("please enter your phone number");
+return false;
+}
+else if(phone.match(/[a-z]/))
+{
+window.alert("please enter a valid phone number");
+return false;
+}
+else if(phone.length!=10)
+{
+window.alert("enter 10 digit number");
+return false;
+}
+if(address=="")
+{
+window.alert("enter the address");
+return false;
+}
+if(dob=="")
+{
+window.alert("enter the date-of-birth");
+return false;
+}
+else if(dob.match(/(\d{2}-\d{2}-\d{4})/))
+{
+window.alert("correct");
+}
+else
+{
+window.alert("invalid date-of-birth");
+return false;
+}
+if((document.f1.n6[0].checked==false)&&(document.f1.n6[1].checked==false))
+{
+window.alert("please select gender");
+return false;
+}
+if((document.f1.n7.checked==false)&&(document.f1.n8.checked==false)&&(document.f1.n9.checked==false))
+{
+window.alert("please select the program");
+return false;
+}
+window.alert("congratulations");
+}
+</script>
+</head>
+<body>
+<form name="f1">
+NAME:     	&nbsp	 <input type="text" name="n1"></br></br>
+EMAIL:  	&nbsp        <input type="text" name="n2"></br></br>
+PHONE:           &nbsp           <input type="text" name="n3"></br></br>
+ADDRESS:      &nbsp            <textarea    cols="20" rows="5"  name="n4"></textarea></br></br>
+DATE-OF-BIRTH:       <input type="text" name="n5" title="[mm-mm-mm]"></br></br>
+GENDER:</br></br><input type="radio" name="n6" value="male" checked>male</br></br>
+               <input type="radio" name="n6" value="female">female</br></br>
+PROGRAM:</br></br><input type="checkbox" name="n7" value="c" checked>c
+	 <input type="checkbox" name="n8" value="c++">c++
+	 <input type="checkbox" name="n9" value="java">java</br></br>
+<input type="button" value="ok" onclick="validate();">
+<button type="reset" value="Reset">Reset</button>
+</body>
+</html>
